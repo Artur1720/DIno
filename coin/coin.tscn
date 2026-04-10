@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://w6wp4urifbsx"]
+
+[ext_resource type="Texture2D" uid="uid://c4ecnmx5iy7qg" path="res://coin/coin_anim_strip_6.png" id="1_0t63x"]
+[ext_resource type="Script" uid="uid://jyfefixarwxc" path="res://coin/coin.gd" id="1_v7riw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pdq0q"]
+radius = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w14il"]
+atlas = ExtResource("1_0t63x")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4etq"]
+atlas = ExtResource("1_0t63x")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4fra"]
+atlas = ExtResource("1_0t63x")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_te2np"]
+atlas = ExtResource("1_0t63x")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1j4n"]
+atlas = ExtResource("1_0t63x")
+region = Rect2(32, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1mwu"]
+atlas = ExtResource("1_0t63x")
+region = Rect2(40, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ciu18"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w14il")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4etq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4fra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_te2np")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1j4n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1mwu")
+}],
+"loop": true,
+"name": &"anim",
+"speed": 5.0
+}]
+
+[node name="coin" type="Area2D" unique_id=341893895]
+scale = Vector2(2.2226422, 2.2226422)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_v7riw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1154672310]
+shape = SubResource("CircleShape2D_pdq0q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=343720250]
+texture_filter = 1
+position = Vector2(-3.874302e-07, 3.5762787e-07)
+scale = Vector2(1.2499999, 1.2499999)
+sprite_frames = SubResource("SpriteFrames_ciu18")
+animation = &"anim"
+autoplay = "anim"
